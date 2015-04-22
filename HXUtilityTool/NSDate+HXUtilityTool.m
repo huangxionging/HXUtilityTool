@@ -10,4 +10,187 @@
 
 @implementation NSDate (HXUtilityTool)
 
+#pragma mark---计算当前日期是周几
+- (NSInteger) dayOfWeek {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitWeekday;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    // 转换一下
+    return (componets.weekday + 5) % 7 + 1;
+}
+
+
+#pragma mark---计算当前日期在本季度多少天
+- (NSInteger) dayOfQuarter {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    NSInteger month = componets.month;
+    
+    NSInteger quarter = (month + 2) / 3;
+    
+    NSInteger startMonth = quarter * 3 - 2;
+    
+    // 设置该季度的第一天
+    [componets setMonth: startMonth];
+    [componets setDay: 1];
+    
+    // 得到本季度第一天的日期
+    NSDate *startDate = [calendar dateFromComponents: componets];
+    
+    // 计算两个日期的差
+    NSTimeInterval timeInterval = [self timeIntervalSinceDate: startDate];
+    
+    // 得到时间
+    return (NSInteger)(timeInterval / 24 / 3600) + 1;
+}
+
+#pragma mark---计算当前日期在本年度第多少天
+- (NSInteger) dayOfYear {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    // 设置该季度的第一天
+    [componets setMonth: 1];
+    [componets setDay: 1];
+    
+    // 得到本季度第一天的日期
+    NSDate *startDate = [calendar dateFromComponents: componets];
+    
+    // 计算两个日期的差
+    NSTimeInterval timeInterval = [self timeIntervalSinceDate: startDate];
+    
+    // 得到时间
+    return (NSInteger)(timeInterval / 24 / 3600) + 1;
+}
+
+
+- (NSInteger) weekOfMonth {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitWeekOfMonth;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    return componets.weekOfMonth;
+}
+
+- (NSInteger) weekOfQuarter {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitWeekOfMonth | NSCalendarUnitMonth;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    [self dayOfQuarter] / 7;
+    
+    [[self dateByAddingNumberDay: -[self dayOfQuarter]] dayOfWeek];
+    
+    
+    return componets.weekday;
+}
+
+#pragma mark---计算与当前时间间隔多少天的日期
+- (NSDate *) dateByAddingNumberDay: (NSInteger) numberDay {
+    // 获取时间差
+    NSTimeInterval time = numberDay * 24 * 60 * 60;
+    // 计算时间
+    return [NSDate dateWithTimeInterval: time sinceDate: self];
+}
+
+#pragma mark---将当前日期转换为字符串
+- (NSString *)stringForCurrentDateWithFormatString:(NSString *)formatString {
+    // 日期格式器
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    if (formatString) {
+        // formatString 存在
+        [formatter setDateFormat: formatString];
+    }
+    else {
+        // 默认格式
+        [formatter setDateFormat: @"yyyyMMdd"];
+    }
+    
+    return [formatter stringFromDate: self];
+}
+
+#pragma mark---计算当前日期所在月份的第一天
+- (NSDate *) firstDateOfCurrntMonth {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取年月日
+    NSInteger flag = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    // 设定1号
+    [componets setDay: 1];
+    
+    return [calendar dateFromComponents: componets];
+
+}
+
+#pragma mark---计算当前日期所在月份的最后一天
+- (NSDate *) lastDateOfCurrntMonth {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取年月日
+    NSInteger flag = NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitYear;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    NSInteger month = componets.month;
+    
+    if (month != 12) {
+        
+        // 设定下个月份
+        [componets setMonth: month + 1];
+        
+        // 设定 1号
+        [componets setDay: 1];
+        
+        // 然后往前推一天
+        NSDate *one = [calendar dateFromComponents: componets];
+        return [one dateByAddingNumberDay: -1];
+    }
+    else {
+        // 如果是12月, 直接计算为
+        [componets setDay: 31];
+        return [calendar dateFromComponents: componets];
+    }
+
+}
+
+
+
+
+
+
 @end
