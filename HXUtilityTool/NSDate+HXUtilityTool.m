@@ -180,8 +180,8 @@
         [componets setDay: 1];
         
         // 然后往前推一天
-        NSDate *one = [calendar dateFromComponents: componets];
-        return [one dateByAddingNumberDay: -1];
+        NSDate *startDate = [calendar dateFromComponents: componets];
+        return [startDate dateByAddingNumberDay: -1];
     }
     else {
         // 如果是12月, 直接计算为

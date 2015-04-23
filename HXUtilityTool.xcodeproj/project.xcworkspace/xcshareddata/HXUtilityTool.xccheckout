@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
 	<string>0F2A3976-95EE-4965-A8A6-63AFF5057533</string>
+=======
+	<string>82FF138D-0809-4778-9BBD-AB731C6A22EE</string>
+>>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectName</key>
 	<string>HXUtilityTool</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
