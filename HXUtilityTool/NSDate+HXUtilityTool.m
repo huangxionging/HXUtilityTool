@@ -96,15 +96,8 @@
     return componets.weekOfMonth;
 }
 
+#pragma mark---本季度第多少周
 - (NSInteger) weekOfQuarter {
-    // 获取公历
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
-    
-    // 提取周
-    NSInteger flag = NSCalendarUnitWeekOfMonth | NSCalendarUnitMonth;
-    
-    // 日期组件
-    NSDateComponents *componets = [calendar components: flag fromDate: self];
     
     NSInteger dayOfQuarter = [self dayOfQuarter] - 1;
     
@@ -115,6 +108,19 @@
     NSInteger currentWeek = [self dayOfWeek];
     
     return (dayOfQuarter + startWeek + 7 - currentWeek) / 7;
+}
+
+- (NSInteger) weekOfYear {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitWeekOfYear;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    return componets.weekOfYear;
 }
 
 #pragma mark---计算与当前时间间隔多少天的日期
@@ -180,8 +186,8 @@
         [componets setDay: 1];
         
         // 然后往前推一天
-        NSDate *one = [calendar dateFromComponents: componets];
-        return [one dateByAddingNumberDay: -1];
+        NSDate *startDate = [calendar dateFromComponents: componets];
+        return [startDate dateByAddingNumberDay: -1];
     }
     else {
         // 如果是12月, 直接计算为

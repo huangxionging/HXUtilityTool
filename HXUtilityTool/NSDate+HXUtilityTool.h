@@ -11,26 +11,6 @@
 @interface NSDate (HXUtilityTool)
 
 /**
- *  格式字符串
- */
-@property (nonatomic, copy) NSString *formatString;
-
-/**
- *  日期格式器
- */
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-
-/**
- *  日历
- */
-@property (nonatomic, strong) NSCalendar *calendar;
-
-/**
- *  日期组件
- */
-@property (nonatomic, strong) NSDateComponents *components;
-
-/**
  *  @brief: 判断当前日期是星期几, 1-7 表示周一到周日
  *  @param: 无
  *  @return: NSInteger 类型, 表示当前日期是周几
