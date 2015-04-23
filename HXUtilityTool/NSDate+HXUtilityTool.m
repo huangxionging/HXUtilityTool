@@ -106,12 +106,15 @@
     // 日期组件
     NSDateComponents *componets = [calendar components: flag fromDate: self];
     
-    [self dayOfQuarter] / 7;
+    NSInteger dayOfQuarter = [self dayOfQuarter] - 1;
     
-    [[self dateByAddingNumberDay: -[self dayOfQuarter]] dayOfWeek];
+    // 本季度第一天是周几
+    NSInteger startWeek = [[self dateByAddingNumberDay: -dayOfQuarter] dayOfWeek];
     
+    // 今天是周几
+    NSInteger currentWeek = [self dayOfWeek];
     
-    return componets.weekday;
+    return (dayOfQuarter + startWeek + 7 - currentWeek) / 7;
 }
 
 #pragma mark---计算与当前时间间隔多少天的日期
