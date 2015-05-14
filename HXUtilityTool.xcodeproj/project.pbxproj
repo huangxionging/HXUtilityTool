@@ -10,12 +10,12 @@
 		F23046381AE74D7D00DBEA58 /* HXUtilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046371AE74D7D00DBEA58 /* HXUtilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F230463E1AE74D7D00DBEA58 /* HXUtilityTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23046321AE74D7D00DBEA58 /* HXUtilityTool.framework */; };
 		F23046451AE74D7D00DBEA58 /* HXUtilityToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046441AE74D7D00DBEA58 /* HXUtilityToolTests.m */; };
-		F23046531AE74E6F00DBEA58 /* HXExternalDependent.h in Headers */ = {isa = PBXBuildFile; fileRef = F230464E1AE74E6F00DBEA58 /* HXExternalDependent.h */; };
-		F23046541AE74E6F00DBEA58 /* NSObject+HXUitilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F230464F1AE74E6F00DBEA58 /* NSObject+HXUitilityTool.h */; };
+		F23046531AE74E6F00DBEA58 /* HXExternalDependent.h in Headers */ = {isa = PBXBuildFile; fileRef = F230464E1AE74E6F00DBEA58 /* HXExternalDependent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F23046541AE74E6F00DBEA58 /* NSObject+HXUitilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F230464F1AE74E6F00DBEA58 /* NSObject+HXUitilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F23046551AE74E6F00DBEA58 /* NSObject+HXUitilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046501AE74E6F00DBEA58 /* NSObject+HXUitilityTool.m */; };
-		F23046561AE74E6F00DBEA58 /* NSString+HXUitilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046511AE74E6F00DBEA58 /* NSString+HXUitilityTool.h */; };
+		F23046561AE74E6F00DBEA58 /* NSString+HXUitilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046511AE74E6F00DBEA58 /* NSString+HXUitilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F23046571AE74E6F00DBEA58 /* NSString+HXUitilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046521AE74E6F00DBEA58 /* NSString+HXUitilityTool.m */; };
-		F230465A1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046581AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h */; };
+		F230465A1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046581AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F230465B1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046591AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m */; };
 /* End PBXBuildFile section */
 

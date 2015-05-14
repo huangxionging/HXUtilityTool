@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 New_Life. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "HXExternalDependent.h"
 
 @interface NSDate (HXUtilityTool)
 
