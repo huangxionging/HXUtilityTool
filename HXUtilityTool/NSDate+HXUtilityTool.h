@@ -53,6 +53,13 @@
 - (NSInteger) weekOfYear;
 
 /**
+ *  @brief: 判断当前月份
+ *  @param: 无
+ *  @return:NSInteger 类型
+ */
+- (NSInteger) monthOfYear;
+
+/**
  *  @brief: 获取本月的最后一天
  *  @param: 无
  *  @return: NSDate 类型

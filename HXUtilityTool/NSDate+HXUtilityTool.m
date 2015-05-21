@@ -123,6 +123,19 @@
     return componets.weekOfYear;
 }
 
+- (NSInteger) monthOfYear {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitMonth;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    return componets.month;
+}
+
 #pragma mark---计算与当前时间间隔多少天的日期
 - (NSDate *) dateByAddingNumberDay: (NSInteger) numberDay {
     // 获取时间差
@@ -197,7 +210,9 @@
 
 }
 
-
+- (NSDate *) firstDateByMonth: (NSUInteger) month {
+    
+}
 
 
 
