@@ -226,13 +226,24 @@
     return [calendar dateFromComponents: dateComponents];
 }
 
+#pragma mark---获取指定年份和指定月份的最后一天
 + (NSDate *) lastDateByMonth: (NSUInteger) month andByYear: (NSInteger) year{
     
     // 先获取第一天, 然后利用之前写好的 API 快速的给出最后一天的日期
     return [[NSDate firstDateByMonth: month andByYear: year] lastDateOfCurrntMonth];
 }
 
+#pragma mark---获取指定年份和指定季度的第一天
++ (NSDate *)firstDateByQuarter:(NSUInteger)quarter andByYear:(NSInteger)year {
+    NSInteger month = (quarter - 1) * 3 + 1;
+    return [NSDate firstDateByMonth: month andByYear: year];
+}
 
+#pragma mark---获取指定年份和指定季度的最后一天
++ (NSDate *)lastDateByQuarter:(NSUInteger)quarter andByYear:(NSInteger)year {
+    NSInteger month = quarter * 3;
+    return [NSDate lastDateByMonth: month andByYear: year];
+}
 
 
 @end
