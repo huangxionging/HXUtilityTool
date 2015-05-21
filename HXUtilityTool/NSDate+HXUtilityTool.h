@@ -88,5 +88,18 @@
  */
 - (NSString *) stringForCurrentDateWithFormatString: (NSString *)formatString;
 
+/**
+ *  @brief: 计算指定年月的第一天
+ *  @param: month 是指定的月份, year 是指定的年份
+ *  @return:日期
+ */
++ (NSDate *) firstDateByMonth: (NSUInteger) month andByYear: (NSInteger) year;
+
+/**
+ *  @brief: 计算指定年月的最后天
+ *  @param: month 是指定的月份, year 是指定的年份
+ *  @return:日期
+ */
++ (NSDate *) lastDateByMonth: (NSUInteger) month andByYear: (NSInteger) year;
 
 @end

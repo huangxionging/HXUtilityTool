@@ -210,8 +210,26 @@
 
 }
 
-- (NSDate *) firstDateByMonth: (NSUInteger) month {
+#pragma mark---获取指定年份和指定月份的第一天
++ (NSDate *) firstDateByMonth: (NSUInteger) month andByYear: (NSInteger) year {
     
+    // 日历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 组件
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    
+    dateComponents.year = year;
+    dateComponents.month = month;
+    dateComponents.day = 1;
+    
+    return [calendar dateFromComponents: dateComponents];
+}
+
++ (NSDate *) lastDateByMonth: (NSUInteger) month andByYear: (NSInteger) year{
+    
+    // 先获取第一天, 然后利用之前写好的 API 快速的给出最后一天的日期
+    return [[NSDate firstDateByMonth: month andByYear: year] lastDateOfCurrntMonth];
 }
 
 
