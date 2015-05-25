@@ -287,5 +287,13 @@
     return [NSDate lastDateByMonth: month andByYear: year];
 }
 
++ (NSDate *) firstDateByYear: (NSInteger) year {
+    return [NSDate firstDateByMonth: 1 andByYear: year];
+}
+
++ (NSDate *) lastDateByYear: (NSInteger) year {
+    return [NSDate lastDateByMonth: 12 andByYear: year];
+}
+
 
 @end

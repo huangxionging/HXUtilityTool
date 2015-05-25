@@ -132,4 +132,18 @@
  */
 + (NSDate *) lastDateByQuarter: (NSUInteger) quarter andByYear: (NSInteger) year;
 
+/**
+ *  @brief: 计算指定年份的第一天
+ *  @param:  year 是指定的年份
+ *  @return:日期
+ */
++ (NSDate *) firstDateByYear: (NSInteger) year;
+
+/**
+ *  @brief: 计算指定年份的最后一天
+ *  @param:  year 是指定的年份
+ *  @return:日期
+ */
++ (NSDate *) lastDateByYear: (NSInteger) year;
+
 @end
