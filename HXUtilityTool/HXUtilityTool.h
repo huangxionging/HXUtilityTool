@@ -15,7 +15,7 @@ FOUNDATION_EXPORT double HXUtilityToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char HXUtilityToolVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HXUtilityTool/PublicHeader.h>
-#import <UitilityTool/NSObject+HXUitilityTool.h>
-#import <UitilityTool/NSString+HXUitilityTool.h>
-#import <UitilityTool/NSDate+HXUitilityTool.h>
+#import "NSObject+HXUitilityTool.h"
+#import "NSString+HXUitilityTool.h"
+#import "NSDate+HXUtilityTool.h"
 

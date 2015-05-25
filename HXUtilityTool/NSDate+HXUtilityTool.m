@@ -25,6 +25,21 @@
     return (componets.weekday + 5) % 7 + 1;
 }
 
+#pragma mark---计算当前日期在月多少天
+- (NSInteger)dayOfMonth {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitDay;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    // 转换一下
+    return componets.day;
+}
+
 
 #pragma mark---计算当前日期在本季度多少天
 - (NSInteger) dayOfQuarter {
@@ -57,6 +72,21 @@
     return (NSInteger)(timeInterval / 24 / 3600) + 1;
 }
 
+#pragma mark---yearOf
+- (NSInteger) yearOfGregorian {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitYear;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    
+    // 转换一下
+    return componets.year;
+}
+
 #pragma mark---计算当前日期在本年度第多少天
 - (NSInteger) dayOfYear {
     // 获取公历
@@ -68,7 +98,7 @@
     // 日期组件
     NSDateComponents *componets = [calendar components: flag fromDate: self];
     
-    // 设置该季度的第一天
+    // 设置 1月1号
     [componets setMonth: 1];
     [componets setDay: 1];
     
@@ -136,6 +166,18 @@
     return componets.month;
 }
 
+- (NSInteger) quarterOfYear {
+    // 获取公历
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];
+    
+    // 提取周
+    NSInteger flag = NSCalendarUnitQuarter | NSCalendarUnitDay | NSCalendarUnitYear | NSCalendarUnitMonth;
+    
+    // 日期组件
+    NSDateComponents *componets = [calendar components: flag fromDate: self];
+    return (componets.month + 2) / 3;
+}
+
 #pragma mark---计算与当前时间间隔多少天的日期
 - (NSDate *) dateByAddingNumberDay: (NSInteger) numberDay {
     // 获取时间差
@@ -175,7 +217,7 @@
     [componets setDay: 1];
     
     return [calendar dateFromComponents: componets];
-
+    
 }
 
 #pragma mark---计算当前日期所在月份的最后一天
@@ -207,7 +249,7 @@
         [componets setDay: 31];
         return [calendar dateFromComponents: componets];
     }
-
+    
 }
 
 #pragma mark---获取指定年份和指定月份的第一天

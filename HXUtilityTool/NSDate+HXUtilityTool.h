@@ -18,6 +18,14 @@
 - (NSInteger) dayOfWeek;
 
 /**
+ *  @brief: 判断当前日期是当月的天
+ *  @param: 无
+ *  @return: NSInteger 类型, 表示当前日期是周几
+ */
+- (NSInteger) dayOfMonth;
+
+
+/**
  *  @brief: 判断当前日期是本季度第多少天
  *  @param: 无
  *  @return: NSInteger 类型
@@ -58,6 +66,13 @@
  *  @return:NSInteger 类型
  */
 - (NSInteger) monthOfYear;
+
+/**
+ *  @brief: 判断当前年份
+ *  @param: 无
+ *  @return:NSInteger 类型
+ */
+- (NSInteger) yearOfGregorian;
 
 /**
  *  @brief: 获取本月的最后一天
