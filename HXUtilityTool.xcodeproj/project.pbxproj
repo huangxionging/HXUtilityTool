@@ -17,6 +17,8 @@
 		F23046571AE74E6F00DBEA58 /* NSString+HXUitilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046521AE74E6F00DBEA58 /* NSString+HXUitilityTool.m */; };
 		F230465A1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F23046581AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F230465B1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F23046591AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m */; };
+		F29985B51B20014300106A7F /* UIImage+HXUtilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A3BBB31B15C6BB0070FF59 /* UIImage+HXUtilityTool.m */; };
+		F2A3BBB41B15C6BB0070FF59 /* UIImage+HXUtilityTool.h in Headers */ = {isa = PBXBuildFile; fileRef = F2A3BBB21B15C6BB0070FF59 /* UIImage+HXUtilityTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		F23046521AE74E6F00DBEA58 /* NSString+HXUitilityTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HXUitilityTool.m"; sourceTree = "<group>"; };
 		F23046581AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HXUtilityTool.h"; sourceTree = "<group>"; };
 		F23046591AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HXUtilityTool.m"; sourceTree = "<group>"; };
+		F2A3BBB21B15C6BB0070FF59 /* UIImage+HXUtilityTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HXUtilityTool.h"; sourceTree = "<group>"; };
+		F2A3BBB31B15C6BB0070FF59 /* UIImage+HXUtilityTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HXUtilityTool.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				F23046521AE74E6F00DBEA58 /* NSString+HXUitilityTool.m */,
 				F23046581AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h */,
 				F23046591AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m */,
+				F2A3BBB21B15C6BB0070FF59 /* UIImage+HXUtilityTool.h */,
+				F2A3BBB31B15C6BB0070FF59 /* UIImage+HXUtilityTool.m */,
 				F23046351AE74D7D00DBEA58 /* Supporting Files */,
 			);
 			path = HXUtilityTool;
@@ -135,6 +141,7 @@
 				F230465A1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.h in Headers */,
 				F23046531AE74E6F00DBEA58 /* HXExternalDependent.h in Headers */,
 				F23046541AE74E6F00DBEA58 /* NSObject+HXUitilityTool.h in Headers */,
+				F2A3BBB41B15C6BB0070FF59 /* UIImage+HXUtilityTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29985B51B20014300106A7F /* UIImage+HXUtilityTool.m in Sources */,
 				F23046571AE74E6F00DBEA58 /* NSString+HXUitilityTool.m in Sources */,
 				F230465B1AE74ECB00DBEA58 /* NSDate+HXUtilityTool.m in Sources */,
 				F23046551AE74E6F00DBEA58 /* NSObject+HXUitilityTool.m in Sources */,
