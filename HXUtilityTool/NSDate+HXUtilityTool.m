@@ -295,5 +295,22 @@
     return [NSDate lastDateByMonth: 12 andByYear: year];
 }
 
++ (NSDate *)dateWithFormatString:(NSString *)formatString andWithDateString:(NSString *)dateString {
+    
+    // 日期格式器
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    if (formatString) {
+        // formatString 存在
+        [formatter setDateFormat: formatString];
+    }
+    else {
+        // 默认格式
+        [formatter setDateFormat: @"yyyyMMdd"];
+    }
+    
+    return [formatter dateFromString: dateString];
+}
+
 
 @end

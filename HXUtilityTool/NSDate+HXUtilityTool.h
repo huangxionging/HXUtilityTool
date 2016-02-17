@@ -146,4 +146,6 @@
  */
 + (NSDate *) lastDateByYear: (NSInteger) year;
 
++ (NSDate *) dateWithFormatString: (NSString *)formatString andWithDateString: (NSString *) dateString;
+
 @end
