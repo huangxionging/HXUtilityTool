@@ -220,6 +220,20 @@
     
 }
 
+#pragma mark---计算日期之间的间隔
+- (NSInteger)dayofIntervalToDate:(NSDate *)ortherDate {
+    NSInteger interval = [self timeIntervalSinceDate: ortherDate] / 24 / 3600;
+    
+    NSDate *date = [self dateByAddingNumberDay: interval];
+    
+    // 合法
+    if ([date isEqualToDate: ortherDate]) {
+        return interval;
+    } else {
+        return MAXFLOAT;
+    }
+}
+
 #pragma mark---计算当前日期所在月份的最后一天
 - (NSDate *) lastDateOfCurrntMonth {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier: NSCalendarIdentifierGregorian];

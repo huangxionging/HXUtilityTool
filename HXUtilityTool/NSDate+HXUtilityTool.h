@@ -75,6 +75,13 @@
 - (NSInteger) yearOfGregorian;
 
 /**
+ *  @brief: 日期之间的间隔
+ *  @param: ortherDate 是被比较的日期
+ *  @return: NSInteger 类型日期之间的间隔表示
+ */
+- (NSInteger) dayofIntervalToDate: (NSDate *) ortherDate;
+
+/**
  *  @brief: 获取本月的最后一天
  *  @param: 无
  *  @return: NSDate 类型
@@ -146,6 +153,11 @@
  */
 + (NSDate *) lastDateByYear: (NSInteger) year;
 
+/**
+ *  @brief: 通过指定格式的字符串创建日期
+ *  @param:  formatString 是格式字符串, 为 nil 时格式为 yyyyMMdd; dateString是源日期字符串
+ *  @return:日期
+ */
 + (NSDate *) dateWithFormatString: (NSString *)formatString andWithDateString: (NSString *) dateString;
 
 @end
