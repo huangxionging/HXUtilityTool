@@ -8,6 +8,7 @@
 
 #import "NSString+HXUitilityTool.h"
 #import "NSObject+HXUitilityTool.h"
+#pragma clang diagnostic ignored "-Wdeprecated"
 
 @implementation NSString (HXUitilityTool)
 
